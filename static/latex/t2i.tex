@@ -1,0 +1,81 @@
+\begin{table*}[!t]
+\centering
+% 1. 修改 Caption，增加 WISE 缩写说明
+% \textbf{Bold}: best results. \underline{Underline}: second-best.
+\caption{Image Generation Results on GenEval, DPG-Bench, and WISE. $^{\dagger}$ refers to methods using LLM rewriters on GenEval. Abbreviations for WISE attributes: \textbf{Cult.} (Cultural), \textbf{Bio.} (Biology), \textbf{Phy.} (Physics), \textbf{Chem.} (Chemistry).}
+\label{tab:merged_results}
+\setlength\tabcolsep{1.8 pt} 
+% \resizebox{0.8\linewidth}{!}{
+\resizebox{\linewidth}{!}{
+% 2. 在 tabular 定义中增加竖线 | 
+% l| -> Model后有线
+% ccccccc| -> GenEval后有线
+% c| -> DPG后有线
+% ccccccc -> WISE
+\vspace{-1em}
+\begin{tabular}{@{}l|ccccccc|c|ccccccc@{}}
+\toprule
+\multicolumn{1}{l|}{} & \multicolumn{7}{c|}{\textbf{GenEval}} & \multicolumn{1}{c|}{\textbf{DPG}} & \multicolumn{7}{c}{\textbf{WISE}} \\ \cmidrule(l){2-16} 
+\multicolumn{1}{l|}{\multirow{-2}{*}{\textbf{Models}}} & \textbf{Single} & \textbf{Two} & \textbf{Count} & \textbf{Colors} & \textbf{Pos} & \textbf{Col-Attr} & \multicolumn{1}{c|}{\textbf{Overall}} & \textbf{Overall} & \textbf{Cult.} & \textbf{Time} & \textbf{Space} & \textbf{Bio.} & \textbf{Phy.} & \textbf{Chem.} & \textbf{Overall} \\ \midrule
+
+% Section 1: Generation-only
+\rowcolor{highlightgray} 
+\multicolumn{16}{c}{\textit{Generation-only Models}} \\
+\multicolumn{1}{l|}{SD3-Medium \citep{esser2024scaling}} & 0.99 & 0.94 & 0.72 & 0.89 & 0.33 & 0.60 & 0.74 & - & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{FLUX.1 [Dev] \citep{flux}} & 0.98 & 0.93 & 0.75 & 0.93 & 0.68 & 0.65 & 0.82 & 84.00 & 0.48 & \textbf{0.58} & 0.62 & 0.42 & 0.51 & 0.35 & 0.50 \\ \midrule
+% Section 2: Unified Multimodal Models
+\rowcolor{highlightgray} 
+\multicolumn{16}{c}{\textit{Unified Multimodal Models}} \\
+\multicolumn{1}{l|}{MetaQuery-XL$^{\dagger}$\citep{pan2025transfer}} & - & - & - & - & - & - & 0.80 & - & \textbf{0.56} & \underline{0.55} & 0.62 & \underline{0.49} & \underline{0.63} & \underline{0.41} & \underline{0.55} \\
+\multicolumn{1}{l|}{Tar \citep{han2025vision}} & 0.99 & 0.92 & \underline{0.83} & 0.85 & 0.80 & 0.65 & 0.84 & 84.19 & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{BLIP3-o \citep{chen2025blip3}} & - & - & - & - & - & - & 0.84 & - & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{UniWorld-V1$^{\dagger}$ \citep{lin2025uniworld}} & 0.98 & 0.93 & 0.81 & 0.89 & 0.74 & 0.71 & 0.84 & - & 0.53 & \underline{0.55} & \textbf{0.73} & {0.45} & 0.59 &\underline{0.41} & \underline{0.55} \\
+\multicolumn{1}{l|}{OmniGen2$^{\dagger}$ \citep{wu2025omnigen2}} & 0.99 & \underline{0.96} & 0.74 & \textbf{0.98} & 0.71 & 0.75 & 0.86 & 83.57 & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{D-DiT \citep{li2025dual}} & 0.97 & 0.80 & 0.54 & 0.76 & 0.32 & 0.50 & 0.65 & - & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{Show-o \citep{xie2024show}} & 0.98 & 0.80 & 0.66 & 0.84 & 0.31 & 0.50 & 0.68 & - & 0.28 & 0.40 & 0.48 & 0.30 & 0.46 & 0.30 & 0.35 \\
+\multicolumn{1}{l|}{Harmon \citep{wu2025harmonizing}} & 0.99 & 0.86 & 0.66 & 0.85 & 0.74 & 0.48 & 0.76 & - & 0.38 & 0.48 & 0.52 & 0.37 & 0.44 & 0.29 & 0.41 \\
+\multicolumn{1}{l|}{MUSE-VL$^{\dagger}$\citep{xie2025muse}} & - & - & - & - & - & - & 0.57 & - & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{Transfusion \citep{zhou2024transfusion}} & - & - & - & - & - & - & 0.63 & - & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{Emu3 \citep{wang2024emu3}} & - & - & - & - & - & - & 0.66 & 81.60 & 0.34 & 0.45 & 0.48 & 0.41 & 0.45 & 0.27 & 0.39 \\
+\multicolumn{1}{l|}{Show-o2 \citep{xie2025show}} & \textbf{1.00} & 0.87 & 0.58 & 0.92 & 0.52 & 0.62 & 0.76 & \underline{86.14} & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{Janus-Pro \citep{chen2025janus}} & 0.99 & 0.89 & 0.59 & 0.90 & 0.79 & 0.66 & 0.80 & 84.19 & 0.30 & 0.37 & 0.49 & 0.36 & 0.42 & 0.26 & 0.35 \\
+\multicolumn{1}{l|}{Mogao \citep{liao2025mogao}} & \textbf{1.00} & \textbf{0.97} & \underline{0.83} & 0.93 & 0.84 & \textbf{0.80} & \textbf{0.89} & 84.33 & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{X-Omni~\cite{geng2025x}} & 0.98 & 0.95 & 0.75 & 0.91 & 0.71 & 0.68 & 0.83 & \textbf{87.65} & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{Ming-UniVision~\cite{huang2025ming}} & \textbf{1.00} & 0.93 & 0.59 & 0.93 & \textbf{0.92} & 0.70 & 0.85 & 82.12 & - & - & - & - & - & - & - \\
+\multicolumn{1}{l|}{BAGEL$^{\dagger}$ \citep{deng2025emerging}} & 0.98 & 0.95 & \textbf{0.84} & \underline{0.95} & 0.78 & \underline{0.77} & \underline{0.88} & 85.07 & 0.44 & \underline{0.55} & {0.68} & 0.44 & 0.60 & 0.39 & 0.52 \\
+\rowcolor{mygreen}
+\multicolumn{1}{l|}{\textbf{UniCom (Ours)}$^{\dagger}$} &\textbf{1.00} & 0.91 & \underline{0.83}  & 0.91 & 0.77 & 0.73 &  0.86 & 85.92 & \underline{0.55} & \textbf{0.56} & \textbf{0.73} & \textbf{0.58} & \textbf{0.66} & \textbf{0.47} & \textbf{0.58} \\ 
+\bottomrule
+\end{tabular}}
+\vspace{-1em}
+\end{table*}
+
+
+
+
+
+% \begin{table*}[!t]
+% \centering
+% \caption{Overall Image Generation Results on GenEval~\cite{ghosh2023geneval}, DPG-Bench~\cite{hu2024ella}, and WISE~\cite{niu2025wise}. \textbf{Bold}: best results. \underline{Underline}: second-best. $^{\dagger}$ refers to methods using LLM rewriters on GenEval.}
+% \label{tab:merged_results_overall}
+% \setlength\tabcolsep{3pt}
+% \resizebox{0.95\linewidth}{!}{
+% \vspace{-1em}
+% \begin{tabular}{@{}l|ccccccccccccccccccc|c@{}}
+% \toprule
+% \textbf{Dataset} & \textbf{SD3-Medium} & \textbf{FLUX.1 [Dev]} & \textbf{MetaQuery-XL$^{\dagger}$} & \textbf{Tar} & \textbf{BLIP3-o} & \textbf{UniWorld-V1$^{\dagger}$} & \textbf{OmniGen2$^{\dagger}$} & \textbf{D-DiT} & \textbf{Show-o} & \textbf{Harmon} & \textbf{MUSE-VL$^{\dagger}$} & \textbf{Transfusion} & \textbf{Emu3} & \textbf{Show-o2} & \textbf{Janus-Pro} & \textbf{Mogao} & \textbf{X-Omni} & \textbf{Ming-UniVision} & \textbf{BAGEL$^{\dagger}$} & \textbf{UniCom (Ours)$^{\dagger}$} \\ 
+% \midrule
+
+% % GenEval Overall Results
+% \textbf{GenEval} & 0.74 & 0.82 & 0.80 & 0.84 & 0.84 & 0.84 & 0.86 & 0.65 & 0.68 & 0.76 & 0.57 & 0.63 & 0.66 & 0.76 & 0.80 & \textbf{0.89} & 0.83 & 0.85 & \underline{0.88} & 0.86 \\
+
+% % DPG-Bench Overall Results
+% \textbf{DPG} & - & 84.00 & - & 84.19 & - & - & 83.57 & - & - & - & - & - & 81.60 & \underline{86.14} & 84.19 & 84.33 & \textbf{87.65} & 82.12 & 85.07 & 85.92 \\
+
+% % WISE Overall Results
+% \textbf{WISE} & - & 0.50 & \underline{0.55} & - & - & \underline{0.55} & - & - & 0.35 & 0.41 & - & - & 0.39 & - & 0.35 & - & - & - & 0.52 & \textbf{0.58} \\
+
+% \bottomrule
+% \end{tabular}}
+% \vspace{-1em}
+% \end{table*}

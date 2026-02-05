@@ -1,0 +1,109 @@
+% \begin{table*}[!t]
+% \centering
+
+% \caption{Comparison of image editing capabilities on 4 Image Editing Bench. For GEdit-Bench, metrics include `G-Semantic Consistency' (G-SC) and `G-Perceptual Quality' (G-PQ).}
+
+% % datasets. For ImgEdit-Bench, performance is evaluated across nine distinct operation categories (e.g., `Add', `Adjust', `Extract', `Replace', `Remove', `Background', `Style', `Hybrid', and `Action'. ). For GEdit-Bench, metrics include `G-Semantic Consistency' (G-SC) and `G-Perceptual Quality' (G-PQ). \textbf{Bold}: best results. \underline{Underline}: second-best.
+% \label{tab:img_edit}
+% \vspace{-0.5em}
+% \scriptsize
+% \setlength\tabcolsep{3 pt}
+% \resizebox{0.85\linewidth}{!}{
+% % \begin{tabular}{@{}lccccccccccccc@{}}
+% % \toprule
+% % \multicolumn{1}{l|}{} & \multicolumn{10}{c|}{\textbf{ImgEdit-Bench}} & \multicolumn{3}{c}{\textbf{GEdit-Bench}} \\ 
+% % \cmidrule(l){2-14} % 调整横线跨度
+% % \multicolumn{1}{l|}{\multirow{-2}{*}{\textbf{Models}}} & \textbf{Add} & \textbf{Adj.} & \textbf{Ext.} & \textbf{Rep.} & \textbf{Rm.} & \textbf{Bg.} & \textbf{Sty.} & \textbf{Hyb.} & \multicolumn{1}{c|}{\textbf{Act.}} & \multicolumn{1}{c|}{\textbf{Overall}} & \textbf{G-SC} & \multicolumn{1}{c|}{\textbf{G-PQ}} & \textbf{G-Overall} \\ \midrule
+
+% \begin{tabular}{@{}lccccccccccccc|c|c@{}}
+% \toprule
+% \multicolumn{1}{l|}{} & \multicolumn{10}{c|}{\textbf{ImgEdit-Bench}} & \multicolumn{3}{c|}{\textbf{GEdit-Bench}} & \multicolumn{1}{c|}{\textbf{WorldEdit}} & \multicolumn{1}{c}{\textbf{Kris}} \\ 
+% \cmidrule(l){2-16} % 调整横线跨度
+% \multicolumn{1}{l|}{\multirow{-2}{*}{\textbf{Models}}} & \textbf{Add} & \textbf{Adj.} & \textbf{Ext.} & \textbf{Rep.} & \textbf{Rm.} & \textbf{Bg.} & \textbf{Sty.} & \textbf{Hyb.} & \multicolumn{1}{c|}{\textbf{Act.}} & \multicolumn{1}{c|}{\textbf{Overall}} & \textbf{G-SC} & \multicolumn{1}{c|}{\textbf{G-PQ}} & \textbf{G-Overall} & \textbf{Overall} & \textbf{Overall} \\ \midrule
+
+
+% % --- Generation-only Models ---
+% \rowcolor{highlightgray} 
+% \multicolumn{14}{c}{\textit{Generation-only Models}} \\
+% \multicolumn{1}{l|}{FLUX.1 Kontext {[}Pro{]} \citep{batifol2025flux}} & 4.25 & 4.15 & 2.35 & 4.56 & 3.57 & 4.26 & 4.57 & 3.68 & \multicolumn{1}{c|}{4.63} & \multicolumn{1}{c|}{4.00} & 7.02 & \multicolumn{1}{c|}{7.60} & 6.56 \\
+% \multicolumn{1}{l|}{Qwen-Image \citep{wu2025qwen}} & 4.38 & 4.16 & \textbf{3.43} & \underline{4.66} & 4.14 & 4.38 & \underline{4.81} & 3.82 & \multicolumn{1}{c|}{\underline{4.69}} & \multicolumn{1}{c|}{\underline{4.27}} & \underline{8.00} & \multicolumn{1}{c|}{\textbf{7.86}} & \textbf{7.56} \\ \midrule
+
+% % --- Specialized Editing Models ---
+% \rowcolor{highlightgray} 
+% \multicolumn{14}{c}{\textit{Specialized Editing Models}} \\
+% \multicolumn{1}{l|}{Instruct-Pix2Pix \citep{brooks2023instructpix2pix}} & 2.45 & 1.83 & 1.44 & 2.01 & 1.50 & 1.44 & 3.55 & 1.20 & \multicolumn{1}{c|}{1.46} & \multicolumn{1}{c|}{1.88} & 3.58 & \multicolumn{1}{c|}{5.49} & 3.68 \\
+% \multicolumn{1}{l|}{MagicBrush \citep{zhang2023magicbrush}} & 2.84 & 1.58 & 1.51 & 1.97 & 1.58 & 1.75 & 2.38 & 1.62 & \multicolumn{1}{c|}{1.22} & \multicolumn{1}{c|}{1.83} & 4.68 & \multicolumn{1}{c|}{5.66} & 4.52 \\
+% \multicolumn{1}{l|}{AnyEdit \citep{yu2025anyedit}} & 3.18 & 2.95 & 1.88 & 2.47 & 2.23 & 2.24 & 2.85 & 1.56 & \multicolumn{1}{c|}{2.65} & \multicolumn{1}{c|}{2.45} & 3.18 & \multicolumn{1}{c|}{5.82} & 3.21 \\
+% \multicolumn{1}{l|}{Step1X-Edit \citep{liu2025step1x-edit}} & 3.88 & 3.14 & 1.76 & 3.40 & 2.41 & 3.16 & 4.63 & 2.64 & \multicolumn{1}{c|}{2.52} & \multicolumn{1}{c|}{3.06} & 7.09 & \multicolumn{1}{c|}{6.76} & 6.70 \\ \midrule
+
+% % --- Native or Composite UMMs ---
+% \rowcolor{highlightgray} 
+% \multicolumn{14}{c}{\textit{Unified Multimodal Models}} \\
+% \multicolumn{1}{l|}{OmniGen \citep{xiao2025omnigen}} & 3.47 & 3.04 & 1.71 & 2.94 & 2.43 & 3.21 & 4.19 & 2.24 & \multicolumn{1}{c|}{3.38} & \multicolumn{1}{c|}{2.96} & 5.96 & \multicolumn{1}{c|}{5.89} & 5.06 \\
+% \multicolumn{1}{l|}{Ming-Univision \citep{huang2025ming}} & - & - & - &-  & - & - &-  & - & \multicolumn{1}{c|}{-} & \multicolumn{1}{c|}{} & 6.04 & \multicolumn{1}{c|}{6.86} & 5.54 \\
+% \multicolumn{1}{l|}{BAGEL \citep{deng2025emerging}} & 3.56 & 3.31 & 1.70 & 3.30 & 2.62 & 3.24 & 4.49 & 2.38 & \multicolumn{1}{c|}{4.17} & \multicolumn{1}{c|}{3.20} & 7.36 & \multicolumn{1}{c|}{6.83} & 6.52 \\
+% \multicolumn{1}{l|}{UniWorld-V1 \citep{lin2025uniworld}} & 3.82 & 3.64 & 2.27 & 3.47 & 3.24 & 2.99 & 4.21 & 2.96 & \multicolumn{1}{c|}{2.74} & \multicolumn{1}{c|}{3.26} & 4.93 & \multicolumn{1}{c|}{7.43} & 4.85 \\
+% \multicolumn{1}{l|}{OmniGen2 \citep{wu2025omnigen2}} & 3.57 & 3.06 & 1.77 & 3.74 & 3.20 & 3.57 & \underline{4.81} & 2.52 & \multicolumn{1}{c|}{4.68} & \multicolumn{1}{c|}{3.44} & 7.16 & \multicolumn{1}{c|}{6.77} & 6.41 \\
+% \multicolumn{1}{l|}{GPT-4o \citep{hurst2024gpt}} & \textbf{4.61} & \underline{4.33} & 2.90 & 4.35 & 3.66 & \textbf{4.57} & \textbf{4.93} & \underline{3.96} & \multicolumn{1}{c|}{\textbf{4.89}} & \multicolumn{1}{c|}{4.20} & 7.85 & \multicolumn{1}{c|}{\underline{7.62}} & \underline{7.53} \\
+% \multicolumn{1}{l|}{TUNA~\cite{liu2025tuna}} & \underline{4.46} & \textbf{4.52} & 2.47 & \textbf{4.68} & \textbf{4.58} & \underline{4.56} & 4.73 & \textbf{4.07} & \multicolumn{1}{c|}{\underline{4.69}} & \multicolumn{1}{c|}{\textbf{4.31}} & 7.79 & \multicolumn{1}{c|}{7.48} & 7.29 \\ 
+% \rowcolor{mygreen}
+% \multicolumn{1}{l|}{\textbf{UniCom (Ours)}} & 4.36  & 4.04 & \underline{3.30}  & 4.63 & \underline{4.40} & 4.24 & 4.79 & 3.54 & \multicolumn{1}{c|}{\underline{4.69}} & \multicolumn{1}{c|}{4.22} & \textbf{8.06} & \multicolumn{1}{c|}{7.33} & 7.32 \\
+% \bottomrule
+% \end{tabular}}
+% \vspace{-2em}
+% \end{table*}  
+
+
+\begin{table*}[!t]
+    \centering
+    % \caption{Comparison of image editing capabilities on the ImgEdit-Bench~\cite{ye2025imgedit} and GEdit-Bench~\cite{liu2025step1x} datasets. For ImgEdit-Bench, performance is evaluated across nine distinct operation categories (e.g., `Add', `Adjust', `Extract', `Replace', `Remove', `Background', `Style', `Hybrid', and `Action'. ). For GEdit-Bench, metrics include `G-Semantic Consistency' (G-SC) and `G-Perceptual Quality' (G-PQ). \textbf{Bold}: best results. \underline{Underline}: second-best.}
+    \caption{Comparison of image editing capabilities on ImgEdit-Bench~\cite{ye2025imgedit}, GEdit-Bench~\cite{liu2025step1x}, WorldEdit~\cite{worldedit} and KRIS-Bench~\cite{wu2025kris}. For GEdit-Bench, metrics include `G-Semantic Consistency' (G-SC) and `G-Perceptual Quality' (G-PQ).}
+    \label{tab:img_edit}
+    \vspace{-0.5em}
+    \scriptsize
+    \setlength\tabcolsep{3 pt}
+    % \resizebox{0.85\linewidth}{!}{
+    \resizebox{\linewidth}{!}{
+    % \begin{tabular}{@{}lccccccccccccc@{}}
+    % \toprule
+    % \multicolumn{1}{l|}{} & \multicolumn{10}{c|}{\textbf{ImgEdit-Bench}} & \multicolumn{3}{c}{\textbf{GEdit-Bench}} \\ 
+    % \cmidrule(l){2-14} % 调整横线跨度
+    % \multicolumn{1}{l|}{\multirow{-2}{*}{\textbf{Models}}} & \textbf{Add} & \textbf{Adj.} & \textbf{Ext.} & \textbf{Rep.} & \textbf{Rm.} & \textbf{Bg.} & \textbf{Sty.} & \textbf{Hyb.} & \multicolumn{1}{c|}{\textbf{Act.}} & \multicolumn{1}{c|}{\textbf{Overall}} & \textbf{G-SC} & \multicolumn{1}{c|}{\textbf{G-PQ}} & \textbf{G-Overall} \\ \midrule
+    
+    \begin{tabular}{@{}lccccccccccccc|c|c@{}}
+    \toprule
+    \multicolumn{1}{l|}{} & \multicolumn{10}{c|}{\textbf{ImgEdit-Bench}} & \multicolumn{3}{c|}{\textbf{GEdit-Bench}} & \multicolumn{1}{c|}{\textbf{WorldEdit}} & \multicolumn{1}{c}{\textbf{KRIS}} \\ 
+    \cmidrule(l){2-16} % 调整横线跨度
+    \multicolumn{1}{l|}{\multirow{-2}{*}{\textbf{Models}}} & \textbf{Add} & \textbf{Adj.} & \textbf{Ext.} & \textbf{Rep.} & \textbf{Rm.} & \textbf{Bg.} & \textbf{Sty.} & \textbf{Hyb.} & \multicolumn{1}{c|}{\textbf{Act.}} & \multicolumn{1}{c|}{\textbf{Overall}} & \textbf{G-SC} & \multicolumn{1}{c|}{\textbf{G-PQ}} & \textbf{G-Overall} & \textbf{Overall} & \textbf{Overall} \\ \midrule
+    
+    
+    % --- Generation-only Models ---
+    \rowcolor{highlightgray} 
+    \multicolumn{16}{c}{\textit{Generation-only Models}} \\
+    \multicolumn{1}{l|}{FLUX.1 Kontext {[}Pro{]} \citep{batifol2025flux}} & 4.25 & 4.15 & 2.35 & 4.56 & 3.57 & 4.26 & 4.57 & 3.68 & \multicolumn{1}{c|}{4.63} & \multicolumn{1}{c|}{4.00} & 7.02 & \multicolumn{1}{c|}{7.60} & 6.56 & 3.21 & 54.17 \\
+    \multicolumn{1}{l|}{Qwen-Image \citep{wu2025qwen}} & 4.38 & 4.16 & \textbf{3.43} & \underline{4.66} & 4.14 & 4.38 & \underline{4.81} & 3.82 & \multicolumn{1}{c|}{\underline{4.69}} & \multicolumn{1}{c|}{\underline{4.27}} & \underline{8.00} & \multicolumn{1}{c|}{\textbf{7.86}} & \textbf{7.56} & - & - \\ \midrule
+    
+    % --- Specialized Editing Models ---
+    \rowcolor{highlightgray} 
+    \multicolumn{16}{c}{\textit{Specialized Editing Models}} \\
+    \multicolumn{1}{l|}{Instruct-Pix2Pix \citep{brooks2023instructpix2pix}} & 2.45 & 1.83 & 1.44 & 2.01 & 1.50 & 1.44 & 3.55 & 1.20 & \multicolumn{1}{c|}{1.46} & \multicolumn{1}{c|}{1.88} & 3.58 & \multicolumn{1}{c|}{5.49} & 3.68 & 2.44 & 22.82 \\
+    \multicolumn{1}{l|}{MagicBrush \citep{zhang2023magicbrush}} & 2.84 & 1.58 & 1.51 & 1.97 & 1.58 & 1.75 & 2.38 & 1.62 & \multicolumn{1}{c|}{1.22} & \multicolumn{1}{c|}{1.83} & 4.68 & \multicolumn{1}{c|}{5.66} & 4.52 & 2.14 & 37.15 \\
+    \multicolumn{1}{l|}{AnyEdit \citep{yu2025anyedit}} & 3.18 & 2.95 & 1.88 & 2.47 & 2.23 & 2.24 & 2.85 & 1.56 & \multicolumn{1}{c|}{2.65} & \multicolumn{1}{c|}{2.45} & 3.18 & \multicolumn{1}{c|}{5.82} & 3.21 & 2.09 & 38.55 \\
+    \multicolumn{1}{l|}{Step1X-Edit \citep{liu2025step1x-edit}} & 3.88 & 3.14 & 1.76 & 3.40 & 2.41 & 3.16 & 4.63 & 2.64 & \multicolumn{1}{c|}{2.52} & \multicolumn{1}{c|}{3.06} & 7.09 & \multicolumn{1}{c|}{6.76} & 6.70 & - & 43.29 \\ \midrule
+    
+    % --- Native or Composite UMMs ---
+    \rowcolor{highlightgray} 
+    \multicolumn{16}{c}{\textit{Unified Multimodal Models}} \\
+    \multicolumn{1}{l|}{OmniGen \citep{xiao2025omnigen}} & 3.47 & 3.04 & 1.71 & 2.94 & 2.43 & 3.21 & 4.19 & 2.24 & \multicolumn{1}{c|}{3.38} & \multicolumn{1}{c|}{2.96} & 5.96 & \multicolumn{1}{c|}{5.89} & 5.06 & 2.52 & 28.85 \\
+    \multicolumn{1}{l|}{Ming-Univision \citep{huang2025ming}} & - & - & - &-  & - & - &-  & - & \multicolumn{1}{c|}{-} & \multicolumn{1}{c|}{} & 6.04 & \multicolumn{1}{c|}{6.86} & 5.54 & - & - \\
+    \multicolumn{1}{l|}{BAGEL \citep{deng2025emerging}} & 3.56 & 3.31 & 1.70 & 3.30 & 2.62 & 3.24 & 4.49 & 2.38 & \multicolumn{1}{c|}{4.17} & \multicolumn{1}{c|}{3.20} & 7.36 & \multicolumn{1}{c|}{6.83} & 6.52 & 2.76 & 56.21 \\
+    \multicolumn{1}{l|}{UniWorld-V1 \citep{lin2025uniworld}} & 3.82 & 3.64 & 2.27 & 3.47 & 3.24 & 2.99 & 4.21 & 2.96 & \multicolumn{1}{c|}{2.74} & \multicolumn{1}{c|}{3.26} & 4.93 & \multicolumn{1}{c|}{7.43} & 4.85 & - & - \\
+    \multicolumn{1}{l|}{OmniGen2 \citep{wu2025omnigen2}} & 3.57 & 3.06 & 1.77 & 3.74 & 3.20 & 3.57 & \underline{4.81} & 2.52 & \multicolumn{1}{c|}{4.68} & \multicolumn{1}{c|}{3.44} & 7.16 & \multicolumn{1}{c|}{6.77} & 6.41 & 2.51 & 49.71 \\
+    \multicolumn{1}{l|}{GPT-4o \citep{hurst2024gpt}} & \textbf{4.61} & \underline{4.33} & 2.90 & 4.35 & 3.66 & \textbf{4.57} & \textbf{4.93} & \underline{3.96} & \multicolumn{1}{c|}{\textbf{4.89}} & \multicolumn{1}{c|}{4.20} & 7.85 & \multicolumn{1}{c|}{\underline{7.62}} & \underline{7.53} & \textbf{4.36} & \textbf{80.09} \\
+    \multicolumn{1}{l|}{TUNA~\cite{liu2025tuna}} & \underline{4.46} & \textbf{4.52} & 2.47 & \textbf{4.68} & \textbf{4.58} & \underline{4.56} & 4.73 & \textbf{4.07} & \multicolumn{1}{c|}{\underline{4.69}} & \multicolumn{1}{c|}{\textbf{4.31}} & 7.79 & \multicolumn{1}{c|}{7.48} & 7.29 & - & - \\ 
+    \rowcolor{mygreen}
+    \multicolumn{1}{l|}{\textbf{UniCom (Ours)}} & 4.36  & 4.04 & \underline{3.30}  & 4.63 & \underline{4.40} & 4.24 & 4.79 & 3.54 & \multicolumn{1}{c|}{\underline{4.69}} & \multicolumn{1}{c|}{4.22} & \textbf{8.06} & \multicolumn{1}{c|}{7.33} & 7.32 & \underline{4.35} & \underline{69.85} \\
+    \bottomrule
+    \end{tabular}}
+    \vspace{-0.5em}
+    \end{table*}    

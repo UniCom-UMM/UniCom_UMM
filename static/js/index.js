@@ -122,17 +122,37 @@ function setupVideoCarouselAutoplay() {
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
 
-    var options = {
-		slidesToScroll: 1,
-		slidesToShow: 1,
-		loop: true,
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
+    // Options for T2I carousel - show 2 slides at once
+    var t2iOptions = {
+        slidesToScroll: 1,
+        slidesToShow: 2,
+        loop: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: true,
+        navigation: true,
+        navigationKeys: true,
+        effect: 'translate'
     }
 
-	// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
+    // Options for other carousels
+    var options = {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        loop: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+    }
+
+    // Initialize T2I carousel with specific options
+    if (document.getElementById('t2i-carousel')) {
+        bulmaCarousel.attach('#t2i-carousel', t2iOptions);
+    }
+
+    // Initialize all other carousels
+    var carousels = bulmaCarousel.attach('.carousel:not(#t2i-carousel)', options);
 	
     bulmaSlider.attach();
     
